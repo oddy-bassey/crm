@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.revoltcode</groupId>
 	<artifactId>crm</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>crm</name>
 	<description>Simple customer relationship service for my ZuBank application</description>
 	<properties>
