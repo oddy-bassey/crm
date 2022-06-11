@@ -45,6 +45,7 @@ public class Customer {
     private LocalDate dateOfBirth;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column
     private Gender gender;
 
@@ -54,6 +55,6 @@ public class Customer {
 
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @Column
+    @Column(updatable = false, nullable = false)
     private LocalDateTime createdDate;
 }
