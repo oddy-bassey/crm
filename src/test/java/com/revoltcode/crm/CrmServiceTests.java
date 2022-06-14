@@ -17,7 +17,7 @@ import org.springframework.transaction.TransactionSystemException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@TestPropertySource("/application.properties")
+@TestPropertySource("/application-test.properties")
 @SpringBootTest
 class CrmServiceTests {
 
