@@ -1,6 +1,7 @@
 package com.revoltcode.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.revoltcode.cqrs.core.domain.model.BaseEntity;
 import com.revoltcode.crm.enumCategory.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +24,7 @@ import java.util.UUID;
 @Entity
 @Table(	name = "customer",
     uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
-public class Customer {
+public class Customer extends BaseEntity {
 
     @Id
     @GeneratedValue
