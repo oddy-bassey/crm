@@ -1,8 +1,8 @@
 package com.revoltcode.crm.controller;
 
-import com.revoltcode.crm.dto.CustomerDto;
-import com.revoltcode.crm.exception.CustomerNotFoundException;
 import com.revoltcode.crm.model.Customer;
+import com.revoltcode.crm.dto.CustomerDto;
+import com.revoltcode.account.common.exception.CustomerNotFoundException;
 import com.revoltcode.crm.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -64,6 +64,7 @@ public class CustomerController {
         customer.setDateOfBirth(newCustomerDto.getDateOfBirth());
         customer.setGender(newCustomerDto.getGender());
         customer.setEmail(newCustomerDto.getEmail());
+        customer.setLastUpdatedDate(LocalDateTime.now());
 
         customerService.save(customer);
         return new ResponseEntity<>(

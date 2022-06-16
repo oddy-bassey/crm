@@ -1,7 +1,7 @@
 package com.revoltcode.crm.controller.advice;
 
 import com.revoltcode.crm.dto.ErrorMessage;
-import com.revoltcode.crm.exception.CustomerNotFoundException;
+import com.revoltcode.account.common.exception.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

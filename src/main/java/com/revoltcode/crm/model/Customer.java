@@ -1,8 +1,8 @@
 package com.revoltcode.crm.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.revoltcode.cqrs.core.domain.model.BaseEntity;
 import com.revoltcode.crm.enumCategory.Gender;
+import com.revoltcode.cqrs.core.domain.model.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -58,4 +58,9 @@ public class Customer extends BaseEntity {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdDate;
+
+    @NotNull
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @Column(nullable = false)
+    private LocalDateTime lastUpdatedDate;
 }
