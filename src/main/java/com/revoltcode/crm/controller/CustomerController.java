@@ -27,7 +27,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findACustomerById(@PathVariable("id")UUID id){
+    public ResponseEntity<?> findCustomerById(@PathVariable("id")UUID id){
         Customer customer = customerService.findByCustomerId(id)
                 .orElseThrow(() -> new CustomerNotFoundException(
                         MessageFormat.format("customer with id: {0} does not exist!", id)));
@@ -44,6 +44,7 @@ public class CustomerController {
                 .gender(newCustomerDto.getGender())
                 .email(newCustomerDto.getEmail())
                 .createdDate(LocalDateTime.now())
+                .lastUpdatedDate(LocalDateTime.now())
                 .build();
 
         customerService.save(customer);

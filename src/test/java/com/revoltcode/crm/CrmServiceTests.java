@@ -36,6 +36,7 @@ class CrmServiceTests {
 				.dateOfBirth(LocalDate.of(2000,3,22))
 				.gender(Gender.male)
 				.createdDate(LocalDateTime.now())
+				.lastUpdatedDate(LocalDateTime.now())
 				.build());
 	}
 
@@ -54,6 +55,7 @@ class CrmServiceTests {
 				.dateOfBirth(LocalDate.of(2003,3,22))
 				.gender(Gender.female)
 				.createdDate(LocalDateTime.now())
+				.lastUpdatedDate(LocalDateTime.now())
 				.build());
 
 		assertNotNull(customer.getId());
@@ -99,6 +101,7 @@ class CrmServiceTests {
 				.dateOfBirth(LocalDate.of(2003,3,22))
 				.gender(Gender.female)
 				.createdDate(LocalDateTime.now())
+				.lastUpdatedDate(LocalDateTime.now())
 				.build());
 
 		customerService.deleteCustomer(customer);

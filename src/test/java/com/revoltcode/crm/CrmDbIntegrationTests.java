@@ -18,8 +18,8 @@ public class CrmDbIntegrationTests {
 
     @BeforeEach
     public void populateDatabase(){
-        jdbcTemplate.execute("insert into customer (CREATED_DATE, DATE_OF_BIRTH, EMAIL, FIRST_NAME, GENDER, LAST_NAME, ID) " +
-                "values ('2022-06-11 20:09:14', '2021-09-12', 'dami@gmail.com', 'dami', 'female', 'adams', 'ef3b95f1-01b1-4dcf-9a65-0bb798e159c1')");
+        jdbcTemplate.execute("insert into customer (CREATED_DATE, LAST_UPDATED_DATE, DATE_OF_BIRTH, EMAIL, FIRST_NAME, GENDER, LAST_NAME, ID) " +
+                "values ('2022-06-11 20:09:14', '2021-08-11 20:09:14', '2021-09-12', 'dami@gmail.com', 'dami', 'female', 'adams', 'ef3b95f1-01b1-4dcf-9a65-0bb798e159c1')");
     }
 
     @AfterEach
