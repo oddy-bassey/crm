@@ -84,4 +84,9 @@ public class CustomerController {
         return new ResponseEntity<>(
                 MessageFormat.format("customer with id: {0} successfully deleted!",id), HttpStatus.OK);
     }
+
+    @GetMapping("/count")
+    public ResponseEntity<?> getCountOfCustomers(){
+        return new ResponseEntity<>(customerService.getCountOfCustomers(), HttpStatus.OK);
+    }
 }

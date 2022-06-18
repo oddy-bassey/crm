@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface CustomerService {
 
+    long getCountOfCustomers();
     Optional<Customer> findByCustomerId(UUID customerId);
     Optional<Customer> findByEmail(String email);
     List<Customer> findAll();

@@ -16,6 +16,11 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
 
     @Override
+    public long getCountOfCustomers() {
+        return customerRepository.count();
+    }
+
+    @Override
     public Optional<Customer> findByCustomerId(UUID customerId) {
         return customerRepository.findById(customerId);
     }
