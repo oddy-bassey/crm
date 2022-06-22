@@ -2,7 +2,7 @@
 
 # CRM (Customer Relationship Management)
 This application is a simple Spring REST app which provide CRUD APIs for customers in the zubank application.
-The application runs on port: **8083** but is routed from port: **8080** by the **Gateway** application.
+The application runs on port: **8083** but is routed to, from port: **8080** by the **Gateway** application.
 
 Technologies
 -
@@ -31,8 +31,8 @@ Architecture
 -
 CRM uses a simple REST service architecture. Here, a Rest controller provide (CRUD based) customer API definitions which allow
 other client application make requests to the CRM. Requests made to the REST controller are being delegated to the service layer
-which then make appropriate calls to the repository from which the data is persisted or retrieved from teh database. This level of 
-abstraction between layers completely decouples the application, provides security and makes the application database agnostic<br>
+which then make appropriate calls to the repository from which the data is persisted or retrieved from the database. This level of 
+abstraction between layers completely decouples the application, provides security and makes the application database agnostic.<br>
 ![alt text](https://github.com/oddy-bassey/crm/blob/main/src/main/resources/screen_shots/crm_arch.PNG?raw=true)
 
 Testing
@@ -43,3 +43,4 @@ Testing is achieved using Junit5 & Mockito library. The application features sim
 * Database integration test
   ![alt text](https://github.com/oddy-bassey/crm/blob/main/src/main/resources/screen_shots/crm_db_Itest.PNG?raw=true)
 * Controller test
+* ![alt text](https://github.com/oddy-bassey/crm/blob/main/src/main/resources/screen_shots/crm_controller_test.PNG?raw=true)
