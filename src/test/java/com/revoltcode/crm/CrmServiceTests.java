@@ -30,7 +30,7 @@ class CrmServiceTests {
 
 	@BeforeEach
 	public void loadData(){
-		customerService.save(Customer.builder()
+		customerRepository.save(Customer.builder()
 				.firstName("Richard")
 				.lastName("David")
 				.email("richarddavid@gmail.com")
@@ -43,8 +43,7 @@ class CrmServiceTests {
 
 	@AfterEach
 	public void deleteData(){
-		Customer customer = customerService.findByEmail("richarddavid@gmail.com").get();
-		customerService.deleteCustomer(customer);
+		customerRepository.deleteAll();
 	}
 
 	@DisplayName("Test that service layer can successfully store customer.")
@@ -113,5 +112,11 @@ class CrmServiceTests {
 
 		customerService.deleteCustomer(customer);
 		assertTrue(customerService.findByEmail("ninadaniel@gmail.com").isEmpty());
+	}
+
+	@DisplayName("Test that service layer can return the correct count of stored customers.")
+	@Test
+	public void getCustomerCount(){
+		assertEquals(1, customerService.getCountOfCustomers());
 	}
 }

@@ -74,10 +74,10 @@ public class CrmRestControllerTests {
         assertTrue("checking if customer with email (dami@gmail.com) exists, then update lastname!", customer.isPresent());
 
         mockMvc.perform(get("/api/v1/customers/{id}", customer.get().getId())
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsBytes(customer)))
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.id", Matchers.is(customer.get().getId().toString())))
                 .andExpect(jsonPath("$.firstName", Matchers.is(customer.get().getFirstName())))
                 .andExpect(jsonPath("$.lastName", Matchers.is(customer.get().getLastName())));
     }
@@ -156,7 +156,6 @@ public class CrmRestControllerTests {
     @DisplayName("Get count of customer test")
     @Test
     public void getCustomerCount() throws Exception {
-        Optional<Customer> customer = customerService.findByEmail("dami@gmail.com");
         mockMvc.perform(get("/api/v1/customers/count"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
